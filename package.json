@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^ 1.0.0-alpha.29",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
