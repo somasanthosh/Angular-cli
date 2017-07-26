@@ -1,5 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+ <!--The content below is only a placeholder and can be replaced.-->
+<!--<div style="text-align:center">
   <h1>
     Welcome to {{title}}!
   </h1>
@@ -18,3 +18,27 @@
   </li>
 </ul>
 
+
+ -->
+<div class = "header">
+ <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <img style="height:40px;width:40px;cursor: pointer" class ="nav-item nav-link active" src="/assets/images/bank.png" alt="Home Link" routerLink="/"/>
+      <a class="nav-item nav-link active" routerLink="/home">Home</a>
+      <a class="nav-item nav-link" routerLink="/login">Login</a>
+      <a class="nav-item nav-link" routerLink="/register">Register</a>
+      <a class="nav-item nav-link" routerLink="/admin">Admin</a>
+    </div>
+  </div>
+</nav>
+</div>
+<div class="container">
+<router-outlet></router-outlet></div>
+  <div class ="footer">
+    <nav class="navbar fixed-bottom navbar-light bg-faded">
+      <hr>
+All Rights Reserved @ 2017 development developer inc</nav>
+
+  </div>
