@@ -1,3 +1,33 @@
 <div class="container">
-    <h4>welcome home view goes here</h4>
+    <div id="harderrors">
+    <h4>HardErrors:</h4>
+     <table>
+        <tr *ngFor = "let test of errorDataList |filterbyerrortype: 'H'">
+            <td><input type ="checkbox">{{test.errorCode}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{test.errorCodeTotalCount}}</td>
+        </tr>
+        </table>
+    </div>
+<div id="warnings">
+    <h4>Warnings:</h4>
+     <table>
+        <tr *ngFor = "let test of errorDataList | filterbyerrortype:'H' ">
+            <td><input type ="checkbox">{{test.errorCode}}</td>
+             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{test.errorCodeTotalCount}}</td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="test">
+        <h1>Test error DATA without a pipe</h1>
+        <table>
+        <tr *ngFor = "let test of errorDataList">
+            <td><input type ="checkbox">{{test.errorCode}}</td>
+             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{test.errorCodeTotalCount}}</td>
+        </tr>
+        </table>
+    </div>
 </div>

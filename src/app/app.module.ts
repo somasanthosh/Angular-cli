@@ -11,10 +11,12 @@ import {appRoutes}  from './routing/app-routing.module';
 import {PageNotFoundComponent} from  './components/PageNotFound/app.pagenotfound';
 import {WelcomeComponent} from './components/Welcome/app.welcome';
 import {FormsModule} from '@angular/forms';
+import {FilterByErrorType} from './components/Home/app.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,AdminComponent,HomeComponent,RegisterComponent,LoginComponent,PageNotFoundComponent,WelcomeComponent
+    AppComponent,AdminComponent,HomeComponent,RegisterComponent,LoginComponent,PageNotFoundComponent,
+    WelcomeComponent, FilterByErrorType
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),FormsModule
