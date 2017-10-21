@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component , Inject} from '@angular/core';
 import {errorData} from './error';
 import {FilterByErrorType} from './app.pipe';
+import {testing, fullName} from './app.test';
+import * as $ from 'jquery';
+import {ExcelService} from './app.excel.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.home.html',
-   styleUrls: ['../../app.component.css']
+   styleUrls: ['../../app.component.css'],
+   providers: [ExcelService]
  })
 export class HomeComponent {
  data:any [] = new Array();
@@ -35,7 +39,7 @@ export class HomeComponent {
       severity: 'H',
       error:'DL17',
       name:'san3',
-      rejected:'Y'
+      rejected:' '
     },  {
       id:5,
       severity: 'H',
@@ -60,27 +64,33 @@ export class HomeComponent {
       severity: 'W',
       error:'DL17',
       name:'san7',
-      rejected:'N'
+      rejected:'F'
     },  {
       id:9,
       severity: 'H',
       error:'DL17',
       name:'san8',
-      rejected:'N'
+      rejected:'F'
     },  {
       id:10,
       severity: 'W',
       error:'DL17',
       name:'san9',
-      rejected:'Y'
+      rejected:'F'
     }];
 
-constructor(){
+constructor(@Inject(ExcelService) public _reportService){
 this.data.push(this.testData);
 }
 
   ngOnInit() {
-console.log(Array.isArray(this.testData));
+/*  $('[data-toggle="tooltip"]').tooltip({
+    title: function () {
+        return this.getData(this.id);
+    }
+}); */
+  console.log(fullName);
+ console.log(Array.isArray(this.testData));
 let hardErrors = this.testData.filter(ts=>ts.severity === 'H');
     console.log(hardErrors);
 let hardErrorsSorted = hardErrors.sort(this.mySorter);
@@ -143,4 +153,28 @@ if(er1>er2){
   return 1;
 }
  }
+ test(){
+   return 'testing to see';
+ }
+  getData(id: any){
+console.log(id);
+  }
+checkallharderrors() {
+console.log('select all clicked');
+console.log($('input[type="checkbox"]#herror').is(':checked'));
+ $('#herror').each(function(){
+if(this.checked === false){
+  this.click();
+}
+
+
+ });
+}
+hideallharderrors() {
+console.log($('input[type="checkbox"]#herror').is(':checked'));
+  
+}
+getExcelReport() {
+this._reportService.exportAsExcelFile(this.testData, 'test');
+}
 }

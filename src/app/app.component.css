@@ -11,7 +11,7 @@ padding: 1.5em;
     padding: 20px;
     background: pink;
     width:'100%px';
-    overflow:hidden;
+    overflow:scroll;
     position:relative;
     top:20px;
     height:30em;

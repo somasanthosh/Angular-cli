@@ -12,14 +12,14 @@ import {PageNotFoundComponent} from  './components/PageNotFound/app.pagenotfound
 import {WelcomeComponent} from './components/Welcome/app.welcome';
 import {FormsModule} from '@angular/forms';
 import {FilterByErrorType} from './components/Home/app.pipe';
-
-@NgModule({
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+ @NgModule({
   declarations: [
     AppComponent,AdminComponent,HomeComponent,RegisterComponent,LoginComponent,PageNotFoundComponent,
     WelcomeComponent, FilterByErrorType
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(appRoutes),FormsModule
+    BrowserModule,RouterModule.forRoot(appRoutes),FormsModule,NgbModule.forRoot()
   ],
   providers: [ ],
   bootstrap: [AppComponent]

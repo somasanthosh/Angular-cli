@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-
-@Component({
+  
+ @Component({
   selector: 'app-root',
   templateUrl: './app.admin.html',
-    styleUrls: ['../../app.component.css']
+  styleUrls: ['./app.admin.scss'],
 })
+
 export class AdminComponent {
 
-
-
+ 
+ 
   
  }
