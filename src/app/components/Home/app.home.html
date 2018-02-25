@@ -1,0 +1,35 @@
+<div class="container">
+    <button class="btn btn-secondary" (click)="getExcelReport()">Get Report</button>
+    <div id="harderrors">
+    <h4>HardErrors:</h4>
+    <a role="button" (click)="checkallharderrors();">All</a> <a role="button" (click)="hideallharderrors();">/None</a>
+     <table>
+        <tr *ngFor = "let test of errorDataList |filterbyerrortype: 'H'">
+            <td data-toggle="tooltip" tooltip-placement="top" title="test();"><input type ="checkbox" id="herror" value="{{test.errorCode}}" >{{test.errorCode}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{test.errorCodeTotalCount}}</td>
+        </tr>
+        </table>
+    </div>
+<div id="warnings">
+    <h4>Warnings:</h4>
+     <table>
+        <tr *ngFor = "let test of errorDataList | filterbyerrortype:'W' ">
+            <td><input type ="checkbox">{{test.errorCode}}</td>
+             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{test.errorCodeTotalCount}}</td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="test">
+        <h1>Test error DATA without a pipe</h1>
+        <table>
+        <tr *ngFor = "let test of errorDataList">
+            <td><input type ="checkbox">{{test.errorCode}}</td>
+             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{test.errorCodeTotalCount}}</td>
+        </tr>
+        </table>
+    </div>
+</div>
